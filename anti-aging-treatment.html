@@ -1356,49 +1356,155 @@ footer p{color:rgba(255,255,255,.55);font-size:.92rem;}
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer>
-  <div class="container-xl">
-    <div class="row g-5">
-      <div class="col-lg-4">
-        <div class="footer-logo-badge"><img src="logo.png" alt="Derma Plus"></div>
+
+<!-- ===== DERMA PLUS FOOTER — paste where your old footer was ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+<style>
+  #dpFooter{display:block;position:relative;overflow:hidden;margin:0!important;padding:0!important;width:100%;height:auto!important;background:#130e10;color:#d9d3d5;font-family:'Outfit',sans-serif;font-size:15px;line-height:1.5}
+  #dpFooter *{box-sizing:border-box;margin:0;padding:0}
+  #dpFooter a{color:inherit;text-decoration:none;font-size:inherit;padding:0;margin:0}
+  #dpFooter ul{list-style:none}
+  #dpFooter li{list-style:none;margin:0}
+  #dpFooter img{display:block;max-width:100%}
+  #dpFooter .dp-wrap{position:relative;z-index:2;max-width:1440px;margin:0 auto;padding:0 32px}
+ 
+  #dpFooter .dp-grid{display:grid;grid-template-columns:1.05fr .65fr 2.9fr 1.05fr;gap:32px;padding:40px 0 30px!important;margin:0!important;align-items:start}
+ 
+  /* brand */
+  #dpFooter .dp-brand img{width:100%;max-width:230px;height:auto;margin-bottom:14px}
+  #dpFooter .dp-brand p{font-size:15px!important;line-height:1.7!important;color:#d3cccf;max-width:340px}
+  #dpFooter .dp-social{display:flex;gap:10px;margin-top:18px}
+  #dpFooter .dp-social a{width:38px;height:38px;border-radius:50%;border:1px solid #e5195e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;transition:.25s}
+  #dpFooter .dp-social a:hover{background:#e5195e;transform:translateY(-2px)}
+ 
+  /* headings */
+  #dpFooter h4{font-family:'Fraunces',serif;font-weight:700;font-size:21px!important;line-height:1.2!important;color:#fff;position:relative;padding-bottom:12px;margin:0 0 14px!important}
+  #dpFooter h4::after{content:'';position:absolute;left:0;bottom:0;width:28px;height:2px;background:#e5195e;border-radius:2px}
+ 
+  /* link lists */
+  #dpFooter .dp-links li{border-bottom:1px solid rgba(255,255,255,.09)}
+  #dpFooter .dp-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0!important;font-size:15.5px!important;line-height:1.4!important;color:#ece6e8;transition:.2s}
+  #dpFooter .dp-links a i{font-size:10px;color:#e5195e;flex-shrink:0;transition:.2s}
+  #dpFooter .dp-links a:hover{color:#ff4b8a;padding-left:3px!important}
+  #dpFooter .dp-links a:hover i{transform:translateX(3px)}
+  
+ 
+  /* treatments: 2 columns (10 + 9), reads top-to-bottom */
+  #dpFooter .dp-treat{display:grid!important;grid-template-columns:1fr 1fr;column-gap:40px;align-items:start}
+ 
+  /* contact */
+  #dpFooter .dp-contact li{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15.5px!important;color:#ece6e8}
+  #dpFooter .dp-contact li a{font-size:15.5px!important}
+  #dpFooter .dp-contact .dp-ic{width:40px;height:40px;border-radius:50%;background:#3a1626;color:#ff3d7f;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+  #dpFooter .dp-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px;padding:13px 18px;border-radius:8px;background:linear-gradient(90deg,#e5195e,#f0307a);color:#fff;font-weight:700;font-size:15px!important;letter-spacing:.3px;text-transform:uppercase;box-shadow:0 8px 20px -8px rgba(229,25,94,.7);transition:.25s}
+  #dpFooter .dp-btn span{display:flex;align-items:center;gap:10px}
+  #dpFooter .dp-btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(229,25,94,.9)}
+ 
+  /* bottom */
+  #dpFooter .dp-bottom{position:relative;z-index:2;max-width:1440px;margin:0 auto;padding:16px 32px!important;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:14px;color:#bdb5b8}
+ 
+  /* leaves */
+  #dpFooter .dp-leaf{position:absolute;pointer-events:none;z-index:1}
+  #dpFooter .dp-leaf.l{left:0;bottom:0;width:90px;opacity:.55}
+  #dpFooter .dp-leaf.r{right:0;bottom:0;width:170px;opacity:.5}
+ 
+  @media(max-width:1100px){
+    #dpFooter .dp-grid{grid-template-columns:1fr 1fr;gap:30px}
+    #dpFooter .dp-brand,#dpFooter .dp-tcol{grid-column:1/-1}
+    #dpFooter .dp-tcol{order:3}
+  }
+  @media(max-width:700px){
+    #dpFooter .dp-grid{grid-template-columns:1fr;gap:26px;padding:30px 0 22px!important}
+    #dpFooter .dp-treat{grid-template-columns:1fr}
+  }
+</style>
+ 
+<div id="dpFooter" role="contentinfo">
+  <svg class="dp-leaf l" viewBox="0 0 110 190" fill="none" aria-hidden="true">
+    <path d="M22 190C6 150 4 105 24 62C40 100 42 150 22 190Z" fill="#e5195e"/>
+    <path d="M58 190C46 160 50 125 74 98C84 130 78 165 58 190Z" fill="#b3134a"/>
+  </svg>
+  <svg class="dp-leaf r" viewBox="0 0 170 120" fill="none" aria-hidden="true">
+    <path d="M0 120C40 70 110 50 170 10L170 120Z" fill="#8f1240"/>
+    <path d="M60 120C90 90 130 75 170 60L170 120Z" fill="#e5195e" opacity=".6"/>
+  </svg>
+ 
+  <div class="dp-wrap">
+    <div class="dp-grid">
+ 
+      <div class="dp-brand">
+        <!-- apna logo path yahan daalein -->
+        <img src="logo.png" alt="Derma Plus – Dr. Manisha Chopra Clinic">
         <p>A premium dermatology &amp; aesthetic clinic in Greater Kailash-II, New Delhi, led by Dr. Manisha Chopra — dedicated to personalised skin, hair and laser care.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/919667379800" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="dp-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919667379800" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="col-6 col-lg-2">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="index.html#treatments">Treatments</a></li>
-          <li><a href="index.html#gallery">Gallery</a></li>
-          <li><a href="index.html#contact">Contact Us</a></li>
+ 
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="dp-links">
+          <li><a href="index.html">Home <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="#about">About Us <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="#treatments">Treatments <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="#gallery">Gallery <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="#contact">Contact Us <i class="fas fa-chevron-right"></i></a></li>
         </ul>
       </div>
-      <div class="col-6 col-lg-3">
-        <h5>Treatments</h5>
-        <ul>
-          <li><a href="index.html#contact" data-treatment="Acne Treatment">Acne Treatment</a></li>
-          <li><a href="index.html#contact" data-treatment="Pigmentation">Pigmentation</a></li>
-          <li><a href="index.html#contact" data-treatment="Hair Fall">Hair Fall</a></li>
-          <li><a href="index.html#contact" data-treatment="Laser Hair Removal">Laser Hair Removal</a></li>
-          <li><a href="index.html#contact" data-treatment="Hydrafacial">Hydrafacial</a></li>
+ 
+      <div class="dp-tcol">
+        <h4>Our Treatments</h4>
+        <div class="dp-treat">
+          <ul class="dp-links">
+          <li><a href="tag-wart-removal.html">Tag and Wart Removal with CO2 Laser <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="botox.html">Botox Treatment <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="fillers-treatment.html">Fillers Treatment <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="face-lift-botox-fillers.html">Face Lift with Botox and Fillers <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="hifu-skin-tightening.html">HIFU for Tightening <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="rf-microneedling.html">Microneedling RF for Acne Scars and Rejuvenation <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="fractional-co2-laser.html">Fractional CO2 Laser for Acne Scars <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="eczema-treatment.html">Eczema Treatment <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="pigmentation-treatment.html">Pigmentation Treatment with Peels and Q-Switch Laser <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="skin-hair-nail-consultation.html">Consultation for Skin, Hair and Nail Problems <i class="fas fa-chevron-right"></i></a></li>
+          </ul>
+          <ul class="dp-links">
+          <li><a href="chemical-peel.html">Chemical Peel <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="hydrafacial.html">Hydrafacial <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="anti-aging-treatment.html">Anti-Aging <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="hair-fall-treatment.html">Hair Fall Treatment <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="prp-hair-fall-treatment.html">PRP Hair Fall Treatment <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="laser-hair-removal.html">Laser Hair Removal <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="skin-rejuvenation.html">Skin Rejuvenation <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="q-switch-laser.html">Q-Switch Laser <i class="fas fa-chevron-right"></i></a></li>
+          <li><a href="carbon-peel.html">Carbon Peel <i class="fas fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+ 
+      <div>
+        <h4>Contact Us</h4>
+        <ul class="dp-contact">
+          <li><span class="dp-ic"><i class="fas fa-map-marker-alt"></i></span><span>W-3, Greater Kailash-II, Alaknanda, New Delhi, 110048</span></li>
+          <li><span class="dp-ic"><i class="fas fa-phone-alt"></i></span><a href="tel:+919667379800">+91 96673 79800</a></li>
         </ul>
+        <a class="dp-btn" href="#appointment"><span><i class="far fa-calendar-alt"></i> Book Appointment</span><i class="fas fa-chevron-right" style="font-size:11px"></i></a>
       </div>
-      <div class="col-lg-3">
-        <h5>Contact</h5>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>W-3, Greater Kailash-II, Alaknanda Don Bosco Road, New Delhi, 110048</span></div>
-        <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>+91 96673 79800</span></div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; <span id="yearNow"></span> Derma Plus — Dr. Manisha Chopra Clinic. All rights reserved.
+ 
     </div>
   </div>
-</footer>
+ 
+  <div class="dp-bottom">© 2026 Derma Plus – Dr. Manisha Chopra Clinic. All rights reserved.</div>
+</div>
+<!-- ===== END FOOTER ===== -->
+ 
+
+
 
 <a href="https://wa.me/919667379800?text=Hi%20Derma%20Plus%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="float-whatsapp" aria-label="Chat on WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
